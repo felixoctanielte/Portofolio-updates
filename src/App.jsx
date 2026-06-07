@@ -1,5 +1,7 @@
 import AboutMeMain from "./components/aboutMeSection/AboutMeMain";
+import AwardsMain from "./components/awardsSection/AwardsMain";
 import ContactMeMain from "./components/contactMeSection/ContactMeMain";
+import CoursesMain from "./components/coursesSection/CoursesMain";
 import ExperienceMain from "./components/experienceSection/ExperienceMain";
 import FooterMain from "./components/footer/FooterMain";
 import HeroGradient from "./components/heroSection/HeroGradient";
@@ -23,6 +25,8 @@ function App() {
       <SubSkills />
       <ExperienceMain />
       <InternshipMain />
+      <AwardsMain />
+      <CoursesMain />
       <ProjectsMain />
       <ContactMeMain />
       <FooterMain />
