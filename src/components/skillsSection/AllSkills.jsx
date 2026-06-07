@@ -1,94 +1,99 @@
 import SingleSkill from "./SingleSkill";
-import { FaHtml5 } from "react-icons/fa";
-import { FaCss3Alt } from "react-icons/fa";
-import { IoLogoJavascript } from "react-icons/io";
-//import { FaPhp } from "react-icons/fa";
-import { FaReact } from "react-icons/fa";
-import { FaLaravel } from "react-icons/fa";
-//import { SiExpress } from "react-icons/si";
-// import { RiTailwindCssFill } from "react-icons/ri";
-import { SiPython } from "react-icons/si";
-import { SiGo } from "react-icons/si";
-import { FaRust } from "react-icons/fa";
-import { FaDatabase } from "react-icons/fa";
-import { FaJava } from  "react-icons/fa";
-import { FaNodeJs } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../framerMotion/variants";
+import { FaHtml5, FaCss3Alt, FaReact, FaLaravel, FaNodeJs, FaRust, FaDatabase, FaJava, FaDocker, FaGitAlt, FaGithub, FaFigma } from "react-icons/fa";
+import { IoLogoJavascript } from "react-icons/io";
+import { SiPython, SiGo, SiTypescript, SiNextdotjs, SiTailwindcss, SiPostgresql, SiMariadb, SiJira, SiAsana, SiClickup } from "react-icons/si";
 
-const skills = [
+const categories = [
   {
-    skill: "HTML",
-    icon: FaHtml5,
+    label: "Frontend",
+    color: "text-cyan",
+    skills: [
+      { skill: "HTML", icon: FaHtml5, color: "text-orange-400" },
+      { skill: "CSS", icon: FaCss3Alt, color: "text-blue-400" },
+      { skill: "JavaScript", icon: IoLogoJavascript, color: "text-yellow-400" },
+      { skill: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
+      { skill: "ReactJS", icon: FaReact, color: "text-cyan-400" },
+      { skill: "Next.js", icon: SiNextdotjs, color: "text-white" },
+      { skill: "Tailwind", icon: SiTailwindcss, color: "text-cyan" },
+    ],
   },
   {
-    skill: "CSS",
-    icon: FaCss3Alt,
+    label: "Backend",
+    color: "text-orange",
+    skills: [
+      { skill: "Node.js", icon: FaNodeJs, color: "text-green-500" },
+      { skill: "Python", icon: SiPython, color: "text-yellow-300" },
+      { skill: "Laravel", icon: FaLaravel, color: "text-red-500" },
+      { skill: "Golang", icon: SiGo, color: "text-cyan-300" },
+      { skill: "Rust", icon: FaRust, color: "text-orange-500" },
+      { skill: "Java", icon: FaJava, color: "text-red-400" },
+    ],
   },
   {
-    skill: "JavaScript",
-    icon: IoLogoJavascript,
-  },
-  // {
-  //   skill: "PHP",
-  //   icon: FaPhp,
-  // },
-  {
-    skill: "ReactJS",
-    icon: FaReact,
+    label: "Database",
+    color: "text-green-400",
+    skills: [
+      { skill: "PostgreSQL", icon: SiPostgresql, color: "text-blue-400" },
+      { skill: "MongoDB", icon: FaDatabase, color: "text-green-400" },
+      { skill: "MariaDB", icon: SiMariadb, color: "text-blue-300" },
+    ],
   },
   {
-    skill: "Laravel",
-    icon: FaLaravel,
-  },
-  {
-    skill: "NodeJs",
-    icon: FaNodeJs,
-  },
- {
-   skill: "Python",
-   icon: SiPython,
- },
-  {
-    skill: "Golang",
-    icon: SiGo,
-  },
-  {
-    skill: "Rust",
-    icon: FaRust,
-  },
-  {
-    skill: "MongoDB",
-    icon: FaDatabase,
-  },
-  {
-    skill: "Java",
-    icon: FaJava,
+    label: "Tools & Collaboration",
+    color: "text-purple-400",
+    skills: [
+      { skill: "Docker", icon: FaDocker, color: "text-blue-500" },
+      { skill: "Git", icon: FaGitAlt, color: "text-orange-500" },
+      { skill: "GitHub", icon: FaGithub, color: "text-white" },
+      { skill: "Figma", icon: FaFigma, color: "text-purple-400" },
+      { skill: "Jira", icon: SiJira, color: "text-blue-500" },
+      { skill: "Asana", icon: SiAsana, color: "text-red-400" },
+      { skill: "ClickUp", icon: SiClickup, color: "text-purple-500" },
+    ],
   },
 ];
 
 const AllSkills = () => {
   return (
-    <div>
-      <div className="flex items-center justify-center relative gap-2 max-w-[1200px] mx-auto">
-        {skills.map((item, index) => {
-          return (
-            <motion.div
-              variants={fadeIn("up", `0.${index}`)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: false, amount: 0 }}
-              key={index}
-            >
-              <SingleSkill
-                key={index}
-                text={item.skill}
-                imgSvg={<item.icon />}
-              />
-            </motion.div>
-          );
-        })}
-      </div>
+    <div className="flex flex-col gap-12 mt-12">
+      {categories.map((cat, catIdx) => (
+        <motion.div
+          key={catIdx}
+          variants={fadeIn("up", catIdx * 0.15)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.1 }}
+        >
+          {/* Category label */}
+          <div className="flex items-center gap-3 mb-5">
+            <span className={`text-xs uppercase tracking-widest font-bold ${cat.color}`}>
+              {cat.label}
+            </span>
+            <div className="flex-1 h-[1px] bg-white/10" />
+          </div>
+
+          {/* Skills grid */}
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-3">
+            {cat.skills.map((item, i) => (
+              <motion.div
+                key={i}
+                variants={fadeIn("up", i * 0.05)}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false, amount: 0 }}
+              >
+                <SingleSkill
+                  text={item.skill}
+                  imgSvg={<item.icon />}
+                  color={item.color}
+                />
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      ))}
     </div>
   );
 };

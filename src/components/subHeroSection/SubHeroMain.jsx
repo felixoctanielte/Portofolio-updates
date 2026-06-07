@@ -1,5 +1,5 @@
 const stats = [
-  { number: "12+", label: "Projects" },
+  { number: "15+", label: "Projects" },
   { number: "2", label: "Internships" },
   { number: "3+", label: "Years Exp" },
   { number: "4", label: "Certifications" },
