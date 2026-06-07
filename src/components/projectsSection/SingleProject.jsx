@@ -2,45 +2,44 @@ import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../framerMotion/variants";
 
-const SingleProject = ({ name, year, align, image, link }) => {
+const SingleProject = ({ name, year, image, link, index }) => {
   return (
     <motion.div
-      variants={fadeIn("top", 0)}
+      variants={fadeIn("up", index * 0.08)}
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.1 }}
-      className={`flex w-full sm:flex-col-reverse items-center gap-8 ${
-        align === "left" ? "md:flex-row" : "md:flex-row-reverse"
-      } justify-end sm:flex-col`}
+      className="relative group rounded-xl overflow-hidden border border-white/10 bg-white/5 hover:border-cyan/50 transition-all duration-500"
     >
-      <div>
-        <h2 className="md:text-3xl sm:text-2xl text-orange ">{name}</h2>
-        <h2
-          className={`text-xl font-thin text-white font-special sm:text-center ${
-            align === "left" ? "md:text-right" : "md:text-left"
-          }`}
-        >
-          {year}
-        </h2>
-        <a
-          href={link}
-          target="_blank" // Buka tab baru
-          rel="noopener noreferrer" // Untuk alasan security
-          className={`text-lg flex gap-2 items-center text-cyan hover:text-orange transition-all duration-500 cursor-pointer sm:justify-self-center ${
-            align === "left" ? "md:justify-self-end" : "md:justify-self-start"
-          }`}
-        >
-          View <BsFillArrowUpRightCircleFill />
-        </a>
+      <div className="aspect-video overflow-hidden">
+        <img
+          src={image}
+          alt={name}
+          className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700"
+        />
       </div>
-      <div className="max-h-[220px] max-w-[400px] rounded-xl overflow-hidden hover:scale-110 transform transition-all duration-500 relative border border-white">
-        <div className="w-full h-full bg-cyan opacity-50 absolute top-0 left-0 hover:opacity-0 transition-all duration-500 md:block sm:hidden pointer-events-none "></div>
-        <img src={image} alt="website image" className="w-full h-full" />
+
+      <div className="absolute inset-0 bg-black/75 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
+        {link ? (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex gap-2 items-center text-white text-base font-semibold hover:text-cyan transition-colors duration-300"
+          >
+            View Project <BsFillArrowUpRightCircleFill size={18} />
+          </a>
+        ) : (
+          <span className="text-white/60 text-base">Coming Soon</span>
+        )}
+      </div>
+
+      <div className="p-4">
+        <h2 className="text-base font-bold text-orange truncate">{name}</h2>
+        <p className="text-white/50 text-sm mt-1">{year}</p>
       </div>
     </motion.div>
   );
 };
 
 export default SingleProject;
-
-
