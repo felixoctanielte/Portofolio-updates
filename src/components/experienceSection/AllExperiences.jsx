@@ -1,13 +1,10 @@
 import SingleExperience from "./SingleExperience";
-import { FaArrowRightLong } from "react-icons/fa6";
-import { motion } from "framer-motion";
-import { fadeIn } from "../../framerMotion/variants";
 
 const experiences = [
   {
     job: "Game Programming Instructor",
     company: "Game Development Club",
-    date: " Oct 2024 - Mar 2025",
+    date: "Oct 2024 - Mar 2025",
     responsibilities: [
       "Taught basic and intermediate game development using Unity and C#.",
       "Guided students in creating 2D and 3D game projects from concept to prototype.",
@@ -16,7 +13,7 @@ const experiences = [
   {
     job: "Coordinator Website",
     company: "Starlight UMN 2025",
-    date: " Feb 2025 - Sep 2025",
+    date: "Feb 2025 - Sep 2025",
     responsibilities: [
       "Designed and developed a full-stack web application using PHP, JavaScript, and MongoDB.",
       "Implemented RESTful APIs for data retrieval and manipulation.",
@@ -45,26 +42,10 @@ const experiences = [
 
 const AllExperiences = () => {
   return (
-    <div className="flex fle md:flex-row sm:flex-col items-center justify-between">
-      {experiences.map((experience, index) => {
-        return (
-          <>
-            <SingleExperience key={index} experience={experience} />
-            {index < 2 ? (
-              <motion.div
-                variants={fadeIn("right", 0)}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: false, amount: 0.7 }}
-              >
-                <FaArrowRightLong className="text-6xl text-orange lg:block sm:hidden" />
-              </motion.div>
-            ) : (
-              ""
-            )}
-          </>
-        );
-      })}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-12">
+      {experiences.map((experience, index) => (
+        <SingleExperience key={index} experience={experience} index={index} />
+      ))}
     </div>
   );
 };

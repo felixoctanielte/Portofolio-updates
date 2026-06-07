@@ -6,3 +6,126 @@
 body {
   @apply bg-darkBrown;
 }
+
+/* Blue fire flame animation */
+@keyframes flicker1 {
+  0%, 100% { transform: scaleX(1)    scaleY(1)    translateY(0px)  rotate(-1deg); opacity: 0.9; }
+  30%       { transform: scaleX(0.82) scaleY(1.2)  translateY(-6px) rotate(1deg);  opacity: 1;   }
+  60%       { transform: scaleX(1.1)  scaleY(0.88) translateY(-3px) rotate(-2deg); opacity: 0.8; }
+  80%       { transform: scaleX(0.9)  scaleY(1.12) translateY(-9px) rotate(2deg);  opacity: 1;   }
+}
+@keyframes flicker2 {
+  0%, 100% { transform: scaleX(1)    scaleY(1)    translateY(0px)  rotate(1deg);  opacity: 0.85; }
+  25%       { transform: scaleX(1.1)  scaleY(1.18) translateY(-8px) rotate(-2deg); opacity: 1;    }
+  55%       { transform: scaleX(0.88) scaleY(0.92) translateY(-4px) rotate(2deg);  opacity: 0.75; }
+  75%       { transform: scaleX(1.05) scaleY(1.1)  translateY(-7px) rotate(-1deg); opacity: 1;    }
+}
+@keyframes flicker3 {
+  0%, 100% { transform: scaleX(1)    scaleY(1)    translateY(0px)  rotate(-2deg); opacity: 0.7; }
+  35%       { transform: scaleX(0.78) scaleY(1.25) translateY(-10px) rotate(3deg); opacity: 1;   }
+  65%       { transform: scaleX(1.12) scaleY(0.85) translateY(-5px)  rotate(-3deg);opacity: 0.8; }
+}
+
+.logo-fire-wrap      { position: relative; display: inline-flex; align-items: center; justify-content: center; }
+.logo-fire-wrap img  { position: relative; z-index: 10; filter: drop-shadow(0 0 6px #15d1e9) drop-shadow(0 0 2px #fff); }
+
+.flame-base {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 55%;
+  background: radial-gradient(ellipse at 50% 100%, #00aaff 0%, #15d1e9 30%, #0044ff 60%, transparent 80%);
+  border-radius: 50% 50% 20% 20% / 60% 60% 20% 20%;
+  filter: blur(6px);
+  animation: flicker1 1.4s ease-in-out infinite;
+  z-index: 1;
+}
+.flame-mid {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65%;
+  height: 70%;
+  background: radial-gradient(ellipse at 50% 100%, #ffffff55 0%, #15d1e9 20%, #0077ff 55%, transparent 80%);
+  border-radius: 50% 50% 20% 20% / 70% 70% 15% 15%;
+  filter: blur(5px);
+  animation: flicker2 1.1s ease-in-out infinite;
+  z-index: 2;
+}
+.flame-tip {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 55%;
+  background: radial-gradient(ellipse at 50% 100%, #ffffffaa 0%, #88eeff 30%, #15d1e9 60%, transparent 85%);
+  border-radius: 50% 50% 20% 20% / 80% 80% 10% 10%;
+  filter: blur(3px);
+  animation: flicker3 0.9s ease-in-out infinite;
+  z-index: 3;
+}
+.flame-glow {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110%;
+  height: 40%;
+  background: radial-gradient(ellipse, #15d1e966 0%, #0055ff33 50%, transparent 75%);
+  filter: blur(10px);
+  animation: flicker1 1.8s ease-in-out infinite reverse;
+  z-index: 0;
+}
+
+@media print {
+  /* Stop all animations */
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+
+  /* Make all framer-motion hidden elements visible */
+  [style*="opacity: 0"],
+  [style*="opacity:0"] {
+    opacity: 1 !important;
+  }
+  [style*="transform"] {
+    transform: none !important;
+  }
+
+  /* Fix navbar — don't print as fixed */
+  nav {
+    position: relative !important;
+  }
+
+  /* Remove background blur/shadow effects that don't print well */
+  * {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Keep dark background */
+  body {
+    background-color: #0E2148 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Make sure all sections are visible and not clipped */
+  .overflow-hidden {
+    overflow: visible !important;
+  }
+
+  /* Page break hints */
+  #about, #skills, #experience, #internship, #awards, #courses, #projects, #contact {
+    page-break-before: auto;
+  }
+}
