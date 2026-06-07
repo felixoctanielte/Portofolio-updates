@@ -35,7 +35,7 @@ const experiences = [
   {
     job: "President",
     company: "Digital Interaction Community",
-    date: "2025 - Present",
+    date: "Apr 2025 - Apr 2026",
     responsibilities: [
       "Led a student organization focused on digital technology and innovation.",
       "Established partnerships with other student organizations and external tech communities.",
