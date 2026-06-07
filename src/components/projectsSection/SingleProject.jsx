@@ -2,7 +2,7 @@ import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../framerMotion/variants";
 
-const SingleProject = ({ name, year, image, link, index }) => {
+const SingleProject = ({ name, year, image, link, description, index }) => {
   return (
     <motion.div
       variants={fadeIn("up", index * 0.08)}
@@ -19,19 +19,29 @@ const SingleProject = ({ name, year, image, link, index }) => {
         />
       </div>
 
-      <div className="absolute inset-0 bg-black/75 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
-        {link ? (
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex gap-2 items-center text-white text-base font-semibold hover:text-cyan transition-colors duration-300"
-          >
-            View Project <BsFillArrowUpRightCircleFill size={18} />
-          </a>
-        ) : (
-          <span className="text-white/60 text-base">Coming Soon</span>
-        )}
+      {/* Hover overlay with description */}
+      <div className="absolute inset-0 bg-black/85 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-between p-5">
+        <div>
+          <h3 className="text-cyan font-bold text-base mb-2">{name}</h3>
+          <p className="text-white/80 text-sm leading-relaxed line-clamp-4">
+            {description}
+          </p>
+        </div>
+        <div className="flex items-center justify-between">
+          <span className="text-white/40 text-xs">{year}</span>
+          {link ? (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex gap-2 items-center text-white text-sm font-semibold hover:text-cyan transition-colors duration-300"
+            >
+              View Project <BsFillArrowUpRightCircleFill size={16} />
+            </a>
+          ) : (
+            <span className="text-white/40 text-sm">Coming Soon</span>
+          )}
+        </div>
       </div>
 
       <div className="p-4">

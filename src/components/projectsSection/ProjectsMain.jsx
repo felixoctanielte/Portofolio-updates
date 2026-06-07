@@ -8,67 +8,75 @@ const projects = [
   {
     name: "Travel Website",
     year: "May 2024",
-    align: "right",
     image: "images/pariwisata.png",
     link: "https://web-pariwisata-umber.vercel.app",
+    description:
+      "A responsive travel website showcasing local tourism destinations with a modern UI. Built with React and Tailwind CSS featuring smooth scroll animations.",
   },
   {
     name: "Event Halloween",
     year: "October 2024",
-    align: "left",
     image: "images/web-hallowen.png",
     link: "#",
+    description:
+      "A dark-themed Halloween event landing page with a countdown timer, photo gallery, and event details brought to life with interactive animations.",
   },
   {
     name: "TRY ON",
     year: "May 2025",
-    align: "right",
     image: "images/tryon.png",
     link: "https://tryon-nine.vercel.app/",
+    description:
+      "A web-based virtual try-on app that lets users preview products through their camera, integrating AI-powered augmented reality technology.",
   },
   {
     name: "Website Starlight",
     year: "Feb 2025 - present",
-    align: "left",
     image: "images/starlight.png",
     link: "https://starlightumn2025.com/",
+    description:
+      "Official website for Starlight UMN 2025, featuring event info, artist lineup, ticketing, and a gallery with elegant design and stunning animations.",
   },
-   {
+  {
     name: "Bitlend ICP",
     year: "Jul 2025 - Agu 2025",
-    align: "right",
     image: "images/bitlendicp.png",
     link: "https://youtu.be/DU6wxz8rpkY?si=StoWZiaXkXAcXwLa",
+    description:
+      "A decentralized crypto lending platform built on the Internet Computer Protocol (ICP), enabling users to lend and borrow digital assets via smart contracts.",
   },
   {
     name: "EduChain",
     year: "Agu 2025 - Agu 2025",
-    align: "left",
     image: "images/educhain.png",
     link: "https://youtu.be/JGstXdF1rlA?si=s8HivQVn5hR9DNHG",
+    description:
+      "A blockchain-based education platform that transparently verifies certificates and academic credentials, built on ICP for data security and immutability.",
   },
-   {
+  {
     name: "Clinic & Quick",
     year: "Sep 2025 - Dec 2025",
-    align: "right",
     image: "images/clinic.png",
     link: "https://github.com/felixoctanielte/Hospital-apps",
+    description:
+      "A hospital clinic management app streamlining patient registration, doctor scheduling, and medical record management, built with React Native for mobile.",
   },
-    {
+  {
     name: "Notification Gateway",
-    year: "Apr - Present",
-    align: "left",
+    year: "Apr 2025 - Present",
     image: "images/gateaway.png",
     link: "",
+    description:
+      "A centralized notification gateway managing multi-channel message delivery (email, SMS, push). Supports prioritized message queues with retry mechanisms.",
   },
   {
     name: "The Art of Culinary Academy",
     year: "Mar 2025 - present",
-    align: "right",
     image: "images/roy.png",
     link: "https://chefroylesmana.com/",
-  }
-
+    description:
+      "Official website for Chef Roy Lesmana's culinary academy, featuring chef profiles, cooking classes, signature menus, and an online booking system.",
+  },
 ];
 
 const INITIAL_LIMIT = 6;
@@ -92,12 +100,13 @@ const ProjectsMain = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
         {visibleProjects.map((project, index) => (
           <SingleProject
-            key={index}
+            key={project.name}
             index={index}
             name={project.name}
             year={project.year}
             image={project.image}
             link={project.link}
+            description={project.description}
           />
         ))}
       </div>
@@ -114,7 +123,9 @@ const ProjectsMain = () => {
             onClick={() => setShowAll((prev) => !prev)}
             className="px-8 py-3 border border-cyan text-cyan rounded-full hover:bg-cyan hover:text-black transition-all duration-300 font-semibold tracking-wide"
           >
-            {showAll ? "Show Less" : `See More (${projects.length - INITIAL_LIMIT} more)`}
+            {showAll
+              ? "Show Less"
+              : `See More (${projects.length - INITIAL_LIMIT} more)`}
           </button>
         </motion.div>
       )}
