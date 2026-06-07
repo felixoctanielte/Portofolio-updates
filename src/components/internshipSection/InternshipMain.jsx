@@ -4,30 +4,30 @@ import { BsBriefcaseFill } from "react-icons/bs";
 
 const internships = [
   {
-    role: "Frontend Developer Intern",
-    company: "Nama Perusahaan 1",
-    period: "Jan 2025 - Apr 2025",
-    location: "Jakarta, Indonesia",
+    role: "Fullstack Developer Intern",
+    company: "PT Rigo Inovasi Digital",
+    period: "Dec 2026 - Apr 2026",
+    location: ", Jl. Poris Paradise Eksklusif No.A4 No. 23 Ruko Lantai 2, Poris Gaga, Kec. Batuceper, Kota Tangerang, Banten 15148",
     description: [
-      "Mengembangkan fitur UI menggunakan React.js dan Tailwind CSS",
-      "Berkolaborasi dengan tim backend untuk integrasi REST API",
-      "Melakukan code review dan testing untuk memastikan kualitas kode",
-      "Berkontribusi dalam sprint planning dan daily standup Agile",
+      "Developed and maintained a high-performance web application using Next.js and TypeScript, ensuring type safety and optimal frontend rendering",
+      "Architected and managed database schemas and server-side logic using Prisma ORM and Supabase, focusing on efficient data retrieval and real-time synchronization.",
+      "Implemented containerization and deployment strategies using Docker, streamlining the development workflow and ensuring consistent environments across staging and production.",
+      "Collaborated with cross-functional teams using Git for version control and Jira for project management, contributing to agile development processes and ensuring timely delivery of features."
     ],
-    tech: ["React", "Tailwind CSS", "TypeScript", "Git"],
+    tech: ["Supabase", "Docker", "Tailwind CSS", "TypeScript", "Next js", "Git", "Jira"],
   },
   {
-    role: "Fullstack Developer Intern",
-    company: "Nama Perusahaan 2",
-    period: "Jun 2025 - Agu 2025",
-    location: "Remote",
+    role: "Software Engineering Intern",
+    company: "PT VEF Solution Indonesia",
+    period: "Feb 2026 - Jun 2026",
+    location: " Ruko Graha  Boulevard Summarecon Serpong, Jln Gading Serpong Boulevard BVA1, Curug Sangereng, Kecamatan  Kelapa Dua, Kabupaten Tangerang, Banten 15810",
     description: [
-      "Membangun fitur fullstack menggunakan Next.js dan Node.js",
-      "Merancang dan mengimplementasikan skema database PostgreSQL",
-      "Mengembangkan REST API dengan autentikasi JWT",
-      "Mengoptimalkan performa aplikasi dan memimpin dokumentasi teknis",
+      "Developed and maintained a high-performance web application using Python and the Frappe framework, ensuring efficient backend processing and seamless integration with the frontend.",
+      "Designed and optimized database schemas using MariaDB, focusing on data integrity and query performance to support the application's scalability.",
+      "Implemented version control and collaborative development practices using Git, contributing to a streamlined workflow and effective team communication.",
+      "Participated in project management and task tracking using Asana, ensuring timely completion of assigned tasks and contributing to the overall success of the project."
     ],
-    tech: ["Next.js", "Node.js", "PostgreSQL", "Docker"],
+    tech: ["Python", "Javascript", "Mariadb", "Framework Frappe", "Github", "Asana"],
   },
 ];
 
