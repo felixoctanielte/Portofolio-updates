@@ -4,32 +4,33 @@ import { BsTrophyFill } from "react-icons/bs";
 
 const awards = [
   {
-    rank: "1st Place",
-    competition: "Nama Lomba 1",
-    organizer: "Penyelenggara",
-    year: "2025",
-    description: "Deskripsi singkat pencapaian dan apa yang dibangun/dilakukan.",
+    rank: "2st Place",
+    competition: "OpenClaw Agenthon Indonesia 2026",
+    organizer: "Build Club and RISTEK Fasilkom UI",
+    year: "2026",
+    align: "middle",
+    description: "Competing as a solo developer, I built SARFlow-an AI Co-Pilot designed to streamline administrative workflows during Search and Rescue (SAR) operations.",
     color: "text-yellow-400 border-yellow-400/30 bg-yellow-400/5",
     dot: "bg-yellow-400",
   },
-  {
-    rank: "2nd Place",
-    competition: "Nama Lomba 2",
-    organizer: "Penyelenggara",
-    year: "2025",
-    description: "Deskripsi singkat pencapaian dan apa yang dibangun/dilakukan.",
-    color: "text-slate-300 border-slate-300/30 bg-slate-300/5",
-    dot: "bg-slate-300",
-  },
-  {
-    rank: "Finalist",
-    competition: "Nama Lomba 3",
-    organizer: "Penyelenggara",
-    year: "2024",
-    description: "Deskripsi singkat pencapaian dan apa yang dibangun/dilakukan.",
-    color: "text-orange border-orange/30 bg-orange/5",
-    dot: "bg-orange",
-  },
+  // {
+  //   rank: "2nd Place",
+  //   competition: "Nama Lomba 2",
+  //   organizer: "Penyelenggara",
+  //   year: "2025",
+  //   description: "Deskripsi singkat pencapaian dan apa yang dibangun/dilakukan.",
+  //   color: "text-slate-300 border-slate-300/30 bg-slate-300/5",
+  //   dot: "bg-slate-300",
+  // },
+  // {
+  //   rank: "Finalist",
+  //   competition: "Nama Lomba 3",
+  //   organizer: "Penyelenggara",
+  //   year: "2024",
+  //   description: "Deskripsi singkat pencapaian dan apa yang dibangun/dilakukan.",
+  //   color: "text-orange border-orange/30 bg-orange/5",
+  //   dot: "bg-orange",
+  // },
 ];
 
 const rankLabel = {
