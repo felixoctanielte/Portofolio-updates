@@ -56,7 +56,7 @@ const AboutMeImage = () => {
           <div className="w-full flex flex-col gap-2 text-xs">
             {[
               { label: "Major", value: "Informatics" },
-              { label: "Year", value: "3rd Year · 2022" },
+              { label: "Year", value: "3rd Year · 2023" },
               { label: "Campus", value: "UMN Tangerang" },
             ].map((item, i) => (
               <div key={i} className="flex justify-between items-center">
