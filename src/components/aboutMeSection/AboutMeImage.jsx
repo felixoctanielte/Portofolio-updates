@@ -95,7 +95,7 @@ const AboutMeImage = () => {
               />
             ))}
           </div>
-          <span className="text-white/25 text-[9px] tracking-widest">UMN-2022</span>
+          <span className="text-white/25 text-[9px] tracking-widest">UMN-2023</span>
         </div>
       </div>
     </motion.div>
