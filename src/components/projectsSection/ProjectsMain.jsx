@@ -109,6 +109,9 @@ const projectCategories = [
         year: "Sep 2025 - Dec 2025",
         image: "images/clinic.png",
         link: "https://github.com/felixoctanielte/Hospital-apps",
+        videoLink:
+          "https://drive.google.com/drive/folders/1bOPOkcx1CX0YGHN4k6z6tVmBWK8Hv7sT",
+        videoLabel: "View Video",
         description:
           "An Android outpatient queue management app built with Kotlin, Material Design XML, Firebase Authentication, and Cloud Firestore. The app supports patient, doctor, and hospital admin roles for online clinic registration, doctor schedule selection, real-time queue status, visit history, master data management, and appointment monitoring, with an additional Flask API deployed on PythonAnywhere.",
       },
@@ -134,12 +137,16 @@ const projectCategories = [
     initialLimit: 3,
     projects: [
       {
-        name: "Personal AI Agent",
-        year: "Jul 2026",
+        name: "SARFlow",
+        year: "OpenClaw Agenthon Indonesia 2026",
         image: "images/agent.png",
-        link: "https://chat-bot-zeta-mocha.vercel.app/",
+        link: "https://github.com/felixoctanielte/OpenClaw2026_BEBAS_SARFlow.git",
+        videoLink:
+          "https://devpost.com/software/sarflow?ref_content=my-projects-tab&ref_feature=my_projects",
+        videoLabel: "View Devpost",
+        status: "Solo Developer",
         description:
-          "A personal AI agent built with Python and integrated with Gemini. The agent can assist users with tasks such as answering questions, giving recommendations, and managing schedules through a conversational web interface.",
+          "An administrative AI co-pilot for Search and Rescue operations that turns unstructured reports into structured incident intake, missing-field checks, SOP-aware risk briefings, append-only timeline logs, and draft reports for human verification. Built with a multi-agent Python pipeline covering intake, extraction, RAG SOP checking, context enrichment, risk briefing, timeline management, report generation, and safety guardrails.",
       },
     ],
   },
@@ -211,6 +218,8 @@ const ProjectsMain = () => {
                     image={project.image}
                     imageFit={project.imageFit}
                     link={project.link}
+                    videoLink={project.videoLink}
+                    videoLabel={project.videoLabel}
                     youtubeLink={project.youtubeLink}
                     status={project.status}
                     category={category.label}

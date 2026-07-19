@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
 import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
 import { FaYoutube } from "react-icons/fa";
-import { FiX } from "react-icons/fi";
+import { FiPlayCircle, FiX } from "react-icons/fi";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../framerMotion/variants";
 
@@ -13,6 +13,8 @@ const SingleProject = ({
   image,
   imageFit = "cover",
   link,
+  videoLink,
+  videoLabel,
   youtubeLink,
   status,
   category,
@@ -46,7 +48,12 @@ const SingleProject = ({
   }, [isModalOpen]);
 
   const openModal = () => setIsModalOpen(true);
-  const shouldShowActions = category === "Mobile" || youtubeLink || link;
+  const projectVideoLink = videoLink || youtubeLink;
+  const isYouTubeVideo = projectVideoLink?.includes("youtu");
+  const VideoIcon = isYouTubeVideo ? FaYoutube : FiPlayCircle;
+  const projectVideoLabel =
+    videoLabel || (isYouTubeVideo ? "View YouTube" : "View Video");
+  const shouldShowActions = category === "Mobile" || projectVideoLink || link;
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter" || event.key === " ") {
@@ -133,15 +140,19 @@ const SingleProject = ({
                     View Project <BsFillArrowUpRightCircleFill size={16} />
                   </button>
                 )}
-                {youtubeLink ? (
+                {projectVideoLink ? (
                   <a
-                    href={youtubeLink}
+                    href={projectVideoLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-red-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-500"
+                    className={`inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-colors ${
+                      isYouTubeVideo
+                        ? "bg-red-600 text-white hover:bg-red-500"
+                        : "bg-orange text-black hover:bg-lightOrange"
+                    }`}
                   >
-                    <FaYoutube size={18} />
-                    View YouTube
+                    <VideoIcon size={18} />
+                    {projectVideoLabel}
                   </a>
                 ) : (
                   <button
@@ -149,8 +160,8 @@ const SingleProject = ({
                     disabled
                     className="inline-flex cursor-not-allowed items-center justify-center gap-2 rounded-lg bg-white/10 px-5 py-3 text-sm font-semibold text-white/30"
                   >
-                    <FaYoutube size={18} />
-                    View YouTube
+                    <FiPlayCircle size={18} />
+                    {projectVideoLabel}
                   </button>
                 )}
               </div>
