@@ -116,6 +116,16 @@ const projectCategories = [
           "An Android outpatient queue management app built with Kotlin, Material Design XML, Firebase Authentication, and Cloud Firestore. The app supports patient, doctor, and hospital admin roles for online clinic registration, doctor schedule selection, real-time queue status, visit history, master data management, and appointment monitoring, with an additional Flask API deployed on PythonAnywhere.",
       },
       {
+        name: "Balansi",
+        year: "Jul 2026 - Present",
+        image: "images/balansi.png",
+        imageFit: "contain",
+        link: "https://github.com/felixoctanielte/balansi.git",
+        status: "In Development",
+        description:
+          "A Flutter accounting app currently in active development for journal entry, chart of accounts, general ledger, trial balance, financial reports, audit trail, and basic biometric protection. Balansi is built as a local-first app with SQLite through Drift, Riverpod state management, GoRouter navigation, Material 3 UI, debit-credit validation, anomaly detection, and PDF/CSV export support.",
+      },
+      {
         name: "JalanAman",
         year: "Garuda Hacks 7.0",
         image: "images/jalan_aman_apk.jpeg",
@@ -137,9 +147,18 @@ const projectCategories = [
     initialLimit: 3,
     projects: [
       {
+        name: "Personal AI Agent",
+        year: "Jul 2026",
+        image: "images/agent.png",
+        link: "https://chat-bot-zeta-mocha.vercel.app/",
+        description:
+          "A personal AI agent built with Python and integrated with Gemini. The agent can assist users with tasks such as answering questions, giving recommendations, and managing schedules through a conversational web interface.",
+      },
+      {
         name: "SARFlow",
         year: "OpenClaw Agenthon Indonesia 2026",
-        image: "images/agent.png",
+        image: "images/sarflow-kijo.png",
+        imageFit: "contain",
         link: "https://github.com/felixoctanielte/OpenClaw2026_BEBAS_SARFlow.git",
         videoLink:
           "https://devpost.com/software/sarflow?ref_content=my-projects-tab&ref_feature=my_projects",
